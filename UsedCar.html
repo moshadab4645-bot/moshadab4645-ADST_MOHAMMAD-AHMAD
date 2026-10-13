@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Used Car Price Prediction</title>
+    <link rel="stylesheet" href="UsedCar.css">
+    <script src="UsedCar.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Car <span>Price</span></h1>
+            <p>Used Car Price Prediction</p>
+        </div>
+        <nav aria-label="Main navigation">
+            <a href="#top">Home</a>
+            <a href="#prediction">Predict</a>
+            <a href="#about">About</a>
+        </nav>
+    </header>
+
+    <main id="top" class="hero">
+        <form id="prediction" class="form-card">
+            <div class="form-top">
+                <span class="eyebrow">Car Price Estimator</span>
+                <h2>Predict Used Car Selling Price</h2>
+                <p>Select options from the dataset and enter the car's kilometres.</p>
+            </div>
+
+            <p id="pageStatus" class="status" role="status">Loading car choices…</p>
+
+            <div class="fields">
+                <div class="field">
+                    <label for="brand">Brand</label>
+                    <select id="brand" name="brand" required disabled>
+                        <option value="">Loading brands…</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label for="model">Model Name</label>
+                    <select id="model" name="model_name" required disabled>
+                        <option value="">Select a brand first</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label for="year">Manufacturing Year</label>
+                    <select id="year" name="year" required disabled>
+                        <option value="">Select a model first</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label for="modelVariant">Model Variant</label>
+                    <select id="modelVariant" name="model_variant" required disabled>
+                        <option value="">Select year first</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label for="carType">Car Type</label>
+                    <select id="carType" name="car_type" required disabled>
+                        <option value="">Select year first</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label for="transmission">Transmission</label>
+                    <select id="transmission" name="transmission" required disabled>
+                        <option value="">Select year first</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label for="fuelType">Fuel Type</label>
+                    <select id="fuelType" name="fuel_type" required disabled>
+                        <option value="">Select year first</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label for="kilometers">Kilometers Driven</label>
+                    <input id="kilometers" name="kilometers" type="number"
+                           min="0" max="1000000" step="1"
+                           placeholder="e.g. 50000" required>
+                </div>
+
+                <div class="field">
+                    <label for="owner">Owner Type</label>
+                    <select id="owner" name="owner" required disabled>
+                        <option value="">Select year first</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label for="state">State</label>
+                    <select id="state" name="state" required disabled>
+                        <option value="">Select year first</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label for="accidental">Accidental</label>
+                    <select id="accidental" name="accidental" required disabled>
+                        <option value="">Select year first</option>
+                    </select>
+                </div>
+
+                <div class="field full">
+                    <button type="submit" id="predictButton" disabled>
+                        Predict Selling Price
+                    </button>
+                </div>
+            </div>
+
+            <div id="resultBox" class="result-box" aria-live="polite" hidden>
+                <h3>Estimated Selling Price</h3>
+                <p id="result" class="result-price"></p>
+                <span id="resultMessage" class="result-message"></span>
+            </div>
+        </form>
+    </main>
+
+    <section id="about" class="about">
+        <h2>About This Project</h2>
+        <p>This estimator uses the trained model and selected car details to predict a used-car selling price.</p>
+    </section>
+
+    <footer>
+        <p>Used Car Price Prediction | Data Science &amp; Machine Learning</p>
+    </footer>
+</body>
+</html>
